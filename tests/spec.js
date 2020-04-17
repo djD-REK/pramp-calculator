@@ -1,7 +1,6 @@
 // Run test suite with: yarn mocha tests/*
 
 const expect = require("chai").expect
-require("mocha-sinon")
 
 const { Calculator } = require("../src/Calculator.js")
 
