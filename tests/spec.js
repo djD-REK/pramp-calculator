@@ -10,4 +10,8 @@ describe("Calculator()", function () {
   it("should add 2+2", function () {
     expect(calculate("2+2")).to.equal(4)
   })
+
+  it("should add 2*2", function () {
+    expect(calculate("2*2")).to.equal(4)
+  })
 })
