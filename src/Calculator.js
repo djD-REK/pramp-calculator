@@ -2,9 +2,9 @@ const Calculator = () => {
   return (inputString) => {
     // Operators are always a single character, so we can split the display
     // string by the operators to get an array of numbers, which we coerce:
-    const parsedNumbers = inputString.split(/\+|\-|\×|\÷/g).map((number) => {
+    const parsedNumbers = inputString.split(/\+|\-|\×|\÷|\*|\//g).map((number) => {
       const parsedNumber = Number(number)
-      Number.isNan(parsedNumber)
+      Number.isNaN(parsedNumber)
         ? console.log(`"${number}" could not be parsed and was stored as NaN`)
         : false
       return parsedNumber
@@ -18,6 +18,17 @@ const Calculator = () => {
     switch (operator) {
       case "+":
         return parsedNumbers[0] + parsedNumbers[1]
+        break
+      case "-":
+        return parsedNumbers[0] - parsedNumbers[1]
+        break
+      case "*":
+      case "×":
+        return parsedNumbers[0] * parsedNumbers[1]
+        break
+      case "/":
+      case "÷":
+        return parsedNumbers[0] / parsedNumbers[1]
         break
       default:
         console.log(`Unknown operator "${operator}"`)
